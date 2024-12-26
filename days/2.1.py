@@ -27,14 +27,6 @@ def checkLevel(level: list[int]) -> bool:
             return True
         
         nextValue = level[i + 1]
-
-        # if v > nextValue and trend == -1:
-        #     print('Trend is negative')
-        #     trend = -1
-        
-        # if v < nextValue and trend == 1:
-        #     print('Trend is positive')
-        #     trend = 1
         
         if v > nextValue and trend == 1:
             print('Trend has changed to from positive to negative, returning False')
@@ -43,14 +35,6 @@ def checkLevel(level: list[int]) -> bool:
         if v < nextValue and trend == -1:
             print('Trend has changed from negative to positive, returning False')
             return False
-        
-        # if  4 > (v - nextValue) > -4:
-        #     print('Difference is max 3, continuing')
-        #     continue
-
-        # if 1 > (v - nextValue) | (v - nextValue) > -1:
-        #     print('Difference is at least 1, continuing')
-        #     continue
 
         if (4 > (v - nextValue) | (v - nextValue) > -4) & ((v - nextValue) != 0):
             print(f'Current value: {v} is not too far from next value: {nextValue}, continuing')
@@ -70,4 +54,5 @@ for report in reports:
         listOfSafeLevels.append(level)
 
 print(f'List of safe levels: {listOfSafeLevels}')
+print()
 print(f'Number of safe levels: {numberOfSafeLevels}')
